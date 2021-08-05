@@ -11,7 +11,7 @@ const DAYS_OF_WEEK = ['M', 'T', 'W', 'R', 'F', 'S', 'U'];
 
 const getDateInfo = date => {
     const startOfMonth = set(date, { date: 1, hours: 0, minutes: 0, seconds: 0, milliseconds: 0 });
-    const now = Date.now();
+    const now = date;
     const todayDay = getDateOfMonth(now);
     const todayMonth = format(now, 'MMM');
     const dateYear = format(startOfMonth, 'yyyy');
@@ -19,6 +19,7 @@ const getDateInfo = date => {
     const days = [...DAYS_OF_WEEK.map(date => ({ name: date, isTitle: true }))];
 
     const dayOfWeek = getDay(startOfMonth);
+    console.log('dayOfWeek', dayOfWeek)
     const daysInMonth = getDaysInMonth(startOfMonth);
 
     for (let i = 1; i < dayOfWeek; i++) {

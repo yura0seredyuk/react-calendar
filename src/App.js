@@ -4,10 +4,6 @@ import getDateInfo from './calendar.js';
 const addMonths = require('date-fns/addMonths');
 const subMonths = require('date-fns/subMonths');
 
-const isMonday = require('date-fns/isMonday');
-const isThursday = require('date-fns/isThursday');
-const isWednesday = require('date-fns/isWednesday');
-
 export default function App() {
   const [activeDate, setActiveDate] = useState(new Date());
   const calendar = useMemo(() => getDateInfo(activeDate), [activeDate]);
