@@ -1,10 +1,15 @@
 import React, { useState, useMemo } from "react";
 import "./style.css";
 import getDateInfo from './calendar.js';
+const addMonths = require('date-fns/addMonths')
 
 export default function App() {
   const [activeDate, setActiveDate] = useState(new Date());
   const calendar = useMemo(() => getDateInfo(activeDate), [activeDate]);
+
+  const handleChangeDate = () => {
+    setActiveDate(addMonths(activeDate, 1));
+  }
 
   return (
     <div className='calendar'>
@@ -12,7 +17,7 @@ export default function App() {
         <div className='topContainer'>
           <div>-</div>
           <div className='title'>{`${calendar.month} ${calendar.year}`}</div>
-          <div>+</div>
+          <div onClick={handleChangeDate}>+</div>
         </div>
         <div className='weekDaysContainer'>
           {calendar.days.map((day, i) => day.isTitle && <span key={i} className='weekDayTitle'>{day.name}</span>)}
