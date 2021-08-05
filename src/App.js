@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from "react";
 import "./style.css";
 import getDateInfo from './calendar.js';
-const addMonths = require('date-fns/addMonths');
-const subMonths = require('date-fns/subMonths');
+import addMonths from 'date-fns/addMonths';
+import subMonths from 'date-fns/subMonths';
 
 export default function App() {
   const [activeDate, setActiveDate] = useState(new Date());
@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <div className='calendar'>
-        {console.log(calendar)}
+        {console.log(calendar, new Date())}
         <div className='topContainer'>
           <div onClick={handleChangeDateMinus}>-</div>
           <div className='title'>{`${calendar.month} ${calendar.year}`}</div>
