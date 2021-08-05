@@ -1,0 +1,101 @@
+h1, p {
+  font-family: Lato;
+}
+
+.calendar {
+  width: 100%;
+  height: 304px;
+  background: #F0F1F7;
+  border: 1px solid rgba(76, 100, 208, 0.3);
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+
+.title {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+  color: #1C2135;
+}
+
+.weekDaysContainer {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekDayTitle {
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #7084DA;
+  margin: auto;
+}
+
+.line {
+  border: 1px dashed #C9D1F1;
+  width: calc(100% - 80px);
+  margin: 5px auto 5px;
+
+}
+
+.bottomContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekendDay {
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Lato;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  color: #E46485;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.todayDay {
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Lato;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  color: #1C2135;
+  width: 30px;
+  height: 30px;
+  background: #C9D1F1;
+  border-radius: 50%;
+}
+
+.weekDay {
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Lato;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  color: #1C2135;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
