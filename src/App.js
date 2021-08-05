@@ -1,13 +1,22 @@
 import React, { useState, useMemo } from "react";
 import "./style.css";
 import getDateInfo from './calendar.js';
-const addMonths = require('date-fns/addMonths')
+const addMonths = require('date-fns/addMonths');
+const subMonths = require('date-fns/subMonths');
+
+const isMonday = require('date-fns/isMonday');
+const isThursday = require('date-fns/isThursday');
+const isWednesday = require('date-fns/isWednesday');
 
 export default function App() {
   const [activeDate, setActiveDate] = useState(new Date());
   const calendar = useMemo(() => getDateInfo(activeDate), [activeDate]);
 
-  const handleChangeDate = () => {
+  const handleChangeDateMinus = () => {
+    setActiveDate(subMonths(activeDate, 1));
+  }
+
+  const handleChangeDatePlus = () => {
     setActiveDate(addMonths(activeDate, 1));
   }
 
@@ -15,9 +24,9 @@ export default function App() {
     <div className='calendar'>
         {console.log(calendar)}
         <div className='topContainer'>
-          <div>-</div>
+          <div onClick={handleChangeDateMinus}>-</div>
           <div className='title'>{`${calendar.month} ${calendar.year}`}</div>
-          <div onClick={handleChangeDate}>+</div>
+          <div onClick={handleChangeDatePlus}>+</div>
         </div>
         <div className='weekDaysContainer'>
           {calendar.days.map((day, i) => day.isTitle && <span key={i} className='weekDayTitle'>{day.name}</span>)}

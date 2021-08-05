@@ -21,8 +21,8 @@ const getDateInfo = date => {
     const dayOfWeek = getDay(startOfMonth);
     const daysInMonth = getDaysInMonth(startOfMonth);
 
-    for (let i = 0; i < dayOfWeek; i++) {
-        days.push(null);
+    for (let i = 1; i < dayOfWeek; i++) {
+        days.push('');
     }
 
     for (let i = 0; i < daysInMonth; i++) {
